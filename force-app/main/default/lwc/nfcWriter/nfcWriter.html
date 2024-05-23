@@ -1,0 +1,20 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item>
+            <lightning-button-group>
+                <lightning-button 
+                    variant="brand" label="Read" 
+                    onclick={handleReadClick}
+                ></lightning-button>    
+                <lightning-button 
+                    variant="brand" label="Write" 
+                    onclick={handleWriteClick}
+                ></lightning-button>    
+            </lightning-button-group>    
+        </lightning-layout-item>
+
+    </lightning-layout>
+        <div class="slds-m-around_medium">
+        <lightning-formatted-text value={text}></lightning-formatted-text>
+    </div>
+</template>
