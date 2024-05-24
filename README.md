@@ -7,6 +7,10 @@
 
 - Place the nfcWriter lwc on a contact record page.
 - for purpose of demonstrating mobile capabilities
-- not sure if needed, but utilising Financial Force's metadata api, and also named credential callout to access photo url (since they were already setup in org from previous experiments)
+- url in contact card is hardcoded for demo purposes. Can create a new field on contact to store
 
+## Instructions
 
+For contact image, go to Salesforce Classic | Document
+Then upload an image, name it as FirstName_LastName_Image (to allow apex to query dynamically)
+I marked it as externally available, but not sure if that is required.
