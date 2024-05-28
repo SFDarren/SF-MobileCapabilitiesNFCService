@@ -1,16 +1,23 @@
 # Salesforce NFC Writer from Contact Record Page
 
-!!!writes to NFC card, make sure you experiment on an empty card to prevent any irreversible changes
+> [!CAUTION]
+> writes to NFC card, make sure you experiment on an empty card to prevent any irreversible changes
+
+> [!NOTE]  
+> For purpose of demonstrating NFCService API in lightning/mobileCapabilities, code may not be written according to best practices.
+
+### Other Notes
+
+- Place the nfcWriter lwc on a contact record page as it reads from contact information
+- For contact image, go to Salesforce Classic | Document, and upload an image, naming it as `FirstName_LastName_Image` to allow apex to query dynamically based on contact's name
+  - I marked it as externally available, but not sure if that is required.
+- Utilising description field to store website & contact note (separated by newline), instead of creating new fields.
+  <img width="525" alt="image" src="https://github.com/SFDarren/SF-MobileCapabilitiesNFCService/assets/150164849/5f573024-013f-4492-b46b-7c6b8ebcf381">
+
+---
+
+https://github.com/SFDarren/SF-MobileCapabilitiesNFCService/assets/150164849/cd638d0d-1bb4-42b7-a81b-5445a46ffebb
+
+---
 
 
-## Notes
-
-- Place the nfcWriter lwc on a contact record page.
-- for purpose of demonstrating mobile capabilities
-- url in contact card is hardcoded for demo purposes. Can create a new field on contact to store
-
-## Instructions
-
-For contact image, go to Salesforce Classic | Document
-Then upload an image, name it as FirstName_LastName_Image (to allow apex to query dynamically)
-I marked it as externally available, but not sure if that is required.
