@@ -28,7 +28,7 @@ public with sharing class NFCController {
         String finalstr = 
             'BEGIN:VCARD\n' +
             'VERSION:4.0\n' +
-            'N:' + c.LastName + ';' + c.FirstName + ';;' + c.Salutation + ';' + '\n' +
+            'N:' + c.LastName + ';' + c.FirstName + ';;' + (String.isBlank(c.Salutation) ? '' : c.Salutation) + ';' + '\n' +
             'FN:' + c.Name + '\n' +
             'TITLE:' + c.Title + '\n' +
             'TEL;TYPE=WORK:' + c.MobilePhone + '\n';
