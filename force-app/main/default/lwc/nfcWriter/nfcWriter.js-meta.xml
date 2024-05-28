@@ -3,14 +3,10 @@
     <apiVersion>59.0</apiVersion>
     <isExposed>true</isExposed>
     <targets>
-        <target>lightning__RecordPage</target>
+        <target>lightning__RecordAction</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__RecordPage">
-            <supportedFormFactors>
-                <supportedFormFactor type="Large"/>
-                <supportedFormFactor type="Small"/>
-            </supportedFormFactors>
-        </targetConfig>
-    </targetConfigs>
-</LightningComponentBundle>
+        <targetConfig targets="lightning__RecordAction">
+        <actionType>Action</actionType>
+    </targetConfig>
+</targetConfigs></LightningComponentBundle>

@@ -2,7 +2,7 @@ public with sharing class NFCController {
     @AuraEnabled
     public static String createVCF(String contactId) {
         Contact c = [
-            SELECT Id, Name, MobilePhone, Email, Title, Account.Name, Salutation, FirstName, LastName,
+            SELECT Id, Name, MobilePhone, Email, Title, Account.Name, Salutation, FirstName, LastName, Description,
                     MailingStreet, MailingCity, MailingState, MailingPostalCode, MailingCountry
             FROM Contact
             WHERE Id =: contactId
@@ -36,8 +36,8 @@ public with sharing class NFCController {
         finalstr += base64Image != '' ? ('PHOTO;ENCODING=BASE64;TYPE=JPEG:' + base64Image + '\n\n') : '';
 
         finalstr = finalstr +
-            'NOTE: I am an adept software developer proficient in JavaScript, and interested in all things tech related.\n' +
-            'URL:https://darrenseet.com\n' +
+            'NOTE:' + c.Description.split('\n')[1] + '\n' +  
+            'URL:' + c.Description.split('\n')[0] + '\n' +
             'ADR;TYPE=WORK:;;' + c.MailingStreet + ';' + c.MailingCity + ';' + c.MailingState + ';' + c.MailingPostalCode + ';' + c.MailingCountry + '\n' +
             'EMAIL;TYPE=WORK:' + c.Email + '\n'+
             'ORG:' + c.Account.Name + '\n' +
@@ -63,14 +63,4 @@ public with sharing class NFCController {
         cd = [SELECT ContentDownloadUrl FROM ContentDistribution WHERE ID =: cd.Id];
         return cd.ContentDownloadUrl;
     }
-
-    // Not useful if you don't care about photo
-    private static MetadataService.MetadataPort createService() { 
-        MetadataService.MetadataPort service = new MetadataService.MetadataPort();
-        // service.endpoint_x = 'callout:ApexMDAPI/services/Soap/m/38.0';
-        service.SessionHeader = new MetadataService.SessionHeader_element();
-        service.SessionHeader.sessionId = '{!$Credential.OAuthToken}'; 
-        return service;     
-    }
-
 }
