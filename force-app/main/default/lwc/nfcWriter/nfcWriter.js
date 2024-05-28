@@ -3,7 +3,6 @@ import { createRecord, getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import { getNfcService, getBiometricsService } from 'lightning/mobileCapabilities';
 import { reduceErrors } from 'c/utils'
 import { ShowToastEvent} from 'lightning/platformShowToastEvent'
-import createLink from '@salesforce/apex/DocumentController.createLink'
 import createVCF from '@salesforce/apex/NFCController.createVCF'
 
 export default class NfcReader extends LightningElement {
