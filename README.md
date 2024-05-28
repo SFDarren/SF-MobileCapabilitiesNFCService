@@ -4,7 +4,7 @@
 > writes to NFC card, make sure you experiment on an empty card to prevent any irreversible changes
 
 > [!NOTE]  
-> For purpose of demonstrating NFCService API in lightning/mobileCapabilities, code may not be written according to best practices.
+> For purpose of demonstrating NFCService API in lightning/mobileCapabilities, performance and UI was not the focus.
 
 ### Other Notes
 
